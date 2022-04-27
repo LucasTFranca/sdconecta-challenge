@@ -37,4 +37,5 @@ export interface PokemonDetails extends Pokemon {
 
 export interface ProviderState {
   pokemons: Pokemon[];
+  loadMorePokemon: () => void;
 }

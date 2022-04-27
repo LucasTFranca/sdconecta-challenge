@@ -8,7 +8,7 @@ function PokemonProvider({ children }: ProviderProps): JSX.Element {
 
   useEffect(() => {
     async function requestPokemons(): Promise<void> {
-      const data = await getPokemons(10);
+      const data = await getPokemons(10, 0);
 
       setPokemons(data);
     }
@@ -16,7 +16,15 @@ function PokemonProvider({ children }: ProviderProps): JSX.Element {
     requestPokemons();
   }, []);
 
-  const state = useMemo(() => ({ pokemons }), [pokemons]);
+  async function loadMorePokemon(): Promise<void> {
+    const data = await getPokemons(10, pokemons.length);
+
+    setPokemons((pokemon) => {
+      return [...pokemon, ...data];
+    });
+  }
+
+  const state = useMemo(() => ({ pokemons, loadMorePokemon }), [pokemons]);
 
   return (
     <PokemonContext.Provider value={state}>{children}</PokemonContext.Provider>
