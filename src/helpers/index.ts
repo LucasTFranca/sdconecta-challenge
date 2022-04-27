@@ -1,11 +1,21 @@
 import axios from "axios";
-import { Pokemons } from "../interfaces";
+import { Pokemon, RawPokemon } from "../interfaces";
 
-export default async function getFirstPokemons(): Promise<Pokemons> {
-  const { data } = await axios.get(
-    "https://pokeapi.co/api/v2/pokemon?limit=10"
+const baseUrl = "https://pokeapi.co/api/v2";
+
+export default async function getPokemons(
+  limitNumber: number
+): Promise<Pokemon[]> {
+  const { data } = await axios.get(`${baseUrl}/pokemon?limit=${limitNumber}`);
+  const pokemons: Pokemon[] = [];
+
+  await Promise.all(
+    data.results.map(async (pokemon: RawPokemon) => {
+      const pokemonData = await axios.get(pokemon.url);
+
+      pokemons.push(pokemonData.data);
+    })
   );
-  const pokemons = data.results;
 
   return pokemons;
 }

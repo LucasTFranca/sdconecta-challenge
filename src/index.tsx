@@ -11,11 +11,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <PokemonProvider>
+    <PokemonProvider>
+      <BrowserRouter>
         <App />
-      </PokemonProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </PokemonProvider>
   </React.StrictMode>
 );
 

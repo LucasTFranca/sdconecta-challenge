@@ -1,21 +1,24 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
 import React, { useEffect, useMemo, useState } from "react";
 import PokemonContext from "./PokemonContext";
-import { ProviderProps } from "../interfaces";
-import getFirstPokemons from "../helpers";
+import { Pokemon, ProviderProps } from "../interfaces";
+import getPokemons from "../helpers";
 
 function PokemonProvider({ children }: ProviderProps): JSX.Element {
-  const [pokemons, setPokemons] = useState<object>([]);
+  const [pokemons, setPokemons] = useState<Pokemon[]>([]);
 
   useEffect(() => {
     async function requestPokemons(): Promise<void> {
-      const data = await getFirstPokemons();
+      const data = await getPokemons(10);
+
       setPokemons(data);
     }
 
     requestPokemons();
-  }, [setPokemons]);
+  }, []);
 
-  const state = useMemo(() => ({}), [pokemons]);
+  const state = useMemo(() => ({ pokemons }), [pokemons]);
+
   return (
     <PokemonContext.Provider value={state}>{children}</PokemonContext.Provider>
   );
