@@ -14,6 +14,7 @@ function PokemonDetailsCard(): JSX.Element {
     },
     weight: 0,
     height: 0,
+    stats: [],
   });
 
   const { id } = useParams();
@@ -32,9 +33,9 @@ function PokemonDetailsCard(): JSX.Element {
     <div>
       <span>{pokemon.name}</span>
       <span>{id}</span>
-      <img src={pokemon.sprites.front_default} alt="" />
+      <img src={pokemon.sprites.front_default} alt={pokemon.name} />
       <span>{pokemon.height}</span>
-      <span>{pokemon.weight}</span>
+      <span>{`${pokemon.weight} kg`}</span>
       {pokemon.types.map(({ type }) => (
         <span key={type.name}>{type.name}</span>
       ))}

@@ -9,7 +9,7 @@ function PokemonCard({ pokemon }: { pokemon: Pokemon }): JSX.Element {
 
   return (
     <div className="card">
-      <img src={sprites.front_default} alt="" />
+      <img src={sprites.front_default} alt={name} />
       <div className="name-id-container">
         <span>{name}</span>
         <span>{id}</span>

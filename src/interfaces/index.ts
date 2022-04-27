@@ -30,9 +30,17 @@ export interface Pokemon {
   sprites: Sprite;
 }
 
+interface Stat {
+  base_stat: number;
+  stat: {
+    name: string;
+  };
+}
+
 export interface PokemonDetails extends Pokemon {
   weight: number;
   height: number;
+  stats: Stat[];
 }
 
 export interface ProviderState {
