@@ -1,11 +1,9 @@
 import axios from "axios";
-import { Pokemon, RawPokemon } from "../interfaces";
+import { Pokemon, PokemonDetails, RawPokemon } from "../interfaces";
 
 const baseUrl = "https://pokeapi.co/api/v2";
 
-export default async function getPokemons(
-  limitNumber: number
-): Promise<Pokemon[]> {
+export async function getPokemons(limitNumber: number): Promise<Pokemon[]> {
   const { data } = await axios.get(`${baseUrl}/pokemon?limit=${limitNumber}`);
   const pokemons: Pokemon[] = [];
 
@@ -18,4 +16,11 @@ export default async function getPokemons(
   );
 
   return pokemons;
+}
+
+export async function getPokemon(id: string): Promise<PokemonDetails> {
+  const { data } = await axios.get(`${baseUrl}/pokemon/${id}`);
+  const pokemon = data;
+
+  return pokemon;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Pokemon } from "../interfaces";
 
 function PokemonCard({ pokemon }: { pokemon: Pokemon }): JSX.Element {
@@ -7,7 +8,7 @@ function PokemonCard({ pokemon }: { pokemon: Pokemon }): JSX.Element {
   return (
     <div>
       <img src={sprites.front_default} alt="" />
-      <span>{name}</span>
+      <Link to={`/PokemonDetails/${id}`}>{name}</Link>
       <span>{id}</span>
       {types.map(({ type }) => (
         <span key={type.name}>{type.name}</span>

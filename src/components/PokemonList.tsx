@@ -3,7 +3,7 @@ import PokemonContext from "../context/PokemonContext";
 import { Pokemon } from "../interfaces";
 import PokemonCard from "./PokemonCard";
 
-function Pokemons(): JSX.Element {
+function PokemonList(): JSX.Element {
   const { pokemons } = useContext(PokemonContext);
 
   return (
@@ -15,4 +15,4 @@ function Pokemons(): JSX.Element {
   );
 }
 
-export default Pokemons;
+export default PokemonList;

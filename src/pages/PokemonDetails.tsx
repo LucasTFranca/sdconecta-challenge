@@ -1,7 +1,8 @@
 import React from "react";
+import PokemonDetailsCard from "../components/PokemonDetailsCard";
 
 function PokemonDetails(): JSX.Element {
-  return <div>PokemonDetails</div>;
+  return <PokemonDetailsCard />;
 }
 
 export default PokemonDetails;

@@ -1,8 +1,7 @@
-/* eslint-disable react/jsx-no-constructed-context-values */
 import React, { useEffect, useMemo, useState } from "react";
 import PokemonContext from "./PokemonContext";
 import { Pokemon, ProviderProps } from "../interfaces";
-import getPokemons from "../helpers";
+import { getPokemons } from "../helpers";
 
 function PokemonProvider({ children }: ProviderProps): JSX.Element {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);

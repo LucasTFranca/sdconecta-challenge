@@ -1,8 +1,8 @@
 import React from "react";
-import Pokemons from "../components/Pokemons";
+import PokemonList from "../components/PokemonList";
 
 function Home(): JSX.Element {
-  return <Pokemons />;
+  return <PokemonList />;
 }
 
 export default Home;
