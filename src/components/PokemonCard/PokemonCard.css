@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Signika:wght@300;400&display=swap');
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  padding: 0.2em;
+  background: #1F1F1F;
+  width: 16em;
+  height: 33vh;
+  color: white;
+  font-family: 'Signika', sans-serif;
+  font-weight: 300;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 18vh;
+  align-self: center;
+  background: #616161;
+}
+
+.name-id-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.4em;
+}
+
+.name-id-container {
+  font-weight: 400 !important;
+  font: inherit;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0.2em;
+}
+
+.list-container div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+
+.list-container ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.list-container li {
+  list-style: none;
+  border-radius: 2px;
+  margin-right: 0.1em;
+  margin-left: 0.1em;
+  padding: 0.1em;
+  color: black;
+  text-align: center;
+  background: #949494;
+}
+
+.link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}

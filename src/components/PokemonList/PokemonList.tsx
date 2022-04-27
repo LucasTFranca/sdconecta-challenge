@@ -1,7 +1,9 @@
 import React, { useContext, useRef } from "react";
-import PokemonContext from "../context/PokemonContext";
-import { Pokemon } from "../interfaces";
-import PokemonCard from "./PokemonCard";
+import PokemonContext from "../../context/PokemonContext";
+import { Pokemon } from "../../interfaces";
+import PokemonCard from "../PokemonCard/PokemonCard";
+
+import "./PokemonList.css";
 
 function PokemonList(): JSX.Element {
   const { pokemons, loadMorePokemon } = useContext(PokemonContext);
@@ -21,7 +23,7 @@ function PokemonList(): JSX.Element {
   };
 
   return (
-    <div>
+    <div className="App">
       {pokemons.map((pokemon: Pokemon) => (
         <PokemonCard key={pokemon.id} pokemon={pokemon} />
       ))}

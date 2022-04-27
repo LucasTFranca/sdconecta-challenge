@@ -8,7 +8,7 @@ function PokemonProvider({ children }: ProviderProps): JSX.Element {
 
   useEffect(() => {
     async function requestPokemons(): Promise<void> {
-      const data = await getPokemons(10, 0);
+      const data = await getPokemons(15, 0);
 
       setPokemons(data);
     }
