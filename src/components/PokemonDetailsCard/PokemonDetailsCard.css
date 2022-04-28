@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400&display=swap');
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  font: inherit;
+  font-family: 'Exo';
+  font-weight: 300;
+  background: rgb(212, 212, 212);
+}
+
+.app img {
+  width: 20em;
+  height: 26vh;
+}
+
+.name-id--details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0.5em;
+  font-size: 26px;
+  font-weight: 400 !important;
+}
+
+.name-id--details-container span {
+  margin: 0.2em;
+}
+
+.span-id {
+  color: #616161;
+}
+
+.information-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 20em;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  background: #949494;
+}
+
+.information-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0.6em;
+  width: 8em;
+}
+
+.white-span {
+  color: white;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  width: 20em;
+}
+
+.stats-container div  {
+  display: flex;
+  justify-content: space-between;
+}

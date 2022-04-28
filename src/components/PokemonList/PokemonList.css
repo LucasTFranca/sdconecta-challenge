@@ -3,4 +3,5 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  background: rgb(212, 212, 212);
 }

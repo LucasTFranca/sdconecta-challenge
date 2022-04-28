@@ -10,10 +10,12 @@ function PokemonCard({ pokemon }: { pokemon: Pokemon }): JSX.Element {
   return (
     <div className="card">
       <img src={sprites.front_default} alt={name} />
+
       <div className="name-id-container">
         <span>{name}</span>
         <span>{id}</span>
       </div>
+
       <div className="list-container">
         <div>
           <span>Type</span>
@@ -33,6 +35,7 @@ function PokemonCard({ pokemon }: { pokemon: Pokemon }): JSX.Element {
           </ul>
         </div>
       </div>
+
       <Link className="link" to={`/PokemonDetails/${id}`} />
     </div>
   );
